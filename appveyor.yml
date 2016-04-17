@@ -1,0 +1,21 @@
+version: 1.0.{build}
+image: Visual Studio 2015
+environment:
+  XAMARIN_COOKIE:
+    secure: PrGMd4sUOiPr8fYCHrCQpvfxd7jeHnHTlc3sAwdH5DkQFtszfgfOC2qJCL7Kornj
+
+install:
+- ps: |
+    $zipPath = "$($env:APPVEYOR_BUILD_FOLDER)\xpkg.zip"
+    (New-Object Net.WebClient).DownloadFile('https://components.xamarin.com/submit/xpkg', $zipPath)
+    7z x $zipPath
+    Set-Content -path "$env:USERPROFILE\.xamarin-credentials" -value "xamarin.com,$env:XAMARIN_COOKIE"
+
+before_build:
+- xamarin-component.exe restore App1.sln
+
+build:
+  project: App1.sln
+  verbosity: minimal
+  
+test: off
