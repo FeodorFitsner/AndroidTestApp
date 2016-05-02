@@ -5,9 +5,9 @@ environment:
     secure: PrGMd4sUOiPr8fYCHrCQpvfxd7jeHnHTlc3sAwdH5DkQFtszfgfOC2qJCL7Kornj
 
 install:
-- ps: Remove-Item -Path 'hklm:\Software\JavaSoft\Java Development Kit\1.6' -Force
-- ps: Remove-Item -Path 'hklm:\Software\JavaSoft\Java Development Kit\1.6.0_45' -Force
-- ps: Remove-Item -Path 'hklm:\Software\JavaSoft\Java Runtime Environment\1.6' -Force
+#- ps: Remove-Item -Path 'hklm:\Software\JavaSoft\Java Development Kit\1.6' -Force
+#- ps: Remove-Item -Path 'hklm:\Software\JavaSoft\Java Development Kit\1.6.0_45' -Force
+#- ps: Remove-Item -Path 'hklm:\Software\JavaSoft\Java Runtime Environment\1.6' -Force
 - ps: Remove-Item -Path 'hklm:\Software\Wow6432Node\JavaSoft\Java Development Kit\1.6' -Force
 - ps: Remove-Item -Path 'hklm:\Software\Wow6432Node\JavaSoft\Java Development Kit\1.6.0_45' -Force
 - ps: Remove-Item -Path 'hklm:\Software\Wow6432Node\JavaSoft\Java Runtime Environment\1.6' -Force
