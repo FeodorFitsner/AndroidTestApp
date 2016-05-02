@@ -5,8 +5,8 @@ environment:
     secure: PrGMd4sUOiPr8fYCHrCQpvfxd7jeHnHTlc3sAwdH5DkQFtszfgfOC2qJCL7Kornj
 
 install:
-- ps: Remove-Item -Path 'hclm:\Software\JavaSoft\Java Development Kit\1.6'
-- ps: Remove-Item -Path 'hclm:\Software\JavaSoft\Java Development Kit\1.6.0_45'
+- ps: Remove-Item -Path 'hklm:\Software\JavaSoft\Java Development Kit\1.6'
+- ps: Remove-Item -Path 'hklm:\Software\JavaSoft\Java Development Kit\1.6.0_45'
 - ps: |
     $zipPath = "$($env:APPVEYOR_BUILD_FOLDER)\xpkg.zip"
     (New-Object Net.WebClient).DownloadFile('https://components.xamarin.com/submit/xpkg', $zipPath)
