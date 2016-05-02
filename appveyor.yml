@@ -1,17 +1,12 @@
 version: 1.0.{build}
-image: Visual Studio 2015
+
+image: test-vs2015-hyperv
+
 environment:
   XAMARIN_COOKIE:
     secure: PrGMd4sUOiPr8fYCHrCQpvfxd7jeHnHTlc3sAwdH5DkQFtszfgfOC2qJCL7Kornj
 
 install:
-#- ps: Remove-Item -Path 'hklm:\Software\JavaSoft\Java Development Kit\1.6' -Force
-#- ps: Remove-Item -Path 'hklm:\Software\JavaSoft\Java Development Kit\1.6.0_45' -Force
-#- ps: Remove-Item -Path 'hklm:\Software\JavaSoft\Java Runtime Environment\1.6' -Force
-- ps: Remove-Item -Path 'hklm:\Software\Wow6432Node\JavaSoft\Java Development Kit\1.6' -Force
-#- ps: Remove-Item -Path 'hklm:\Software\Wow6432Node\JavaSoft\Java Development Kit\1.6.0_45' -Force
-#- ps: Remove-Item -Path 'hklm:\Software\Wow6432Node\JavaSoft\Java Runtime Environment\1.6' -Force
-#- ps: Remove-Item -Path 'hklm:\Software\JavaSoft\Java Runtime Environment\1.6.0_45' -Force
 - ps: |
     $zipPath = "$($env:APPVEYOR_BUILD_FOLDER)\xpkg.zip"
     (New-Object Net.WebClient).DownloadFile('https://components.xamarin.com/submit/xpkg', $zipPath)
