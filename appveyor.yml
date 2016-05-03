@@ -1,6 +1,6 @@
 version: 1.0.{build}
 
-image: test-vs2015-hyperv
+#image: test-vs2015-hyperv
 
 environment:
   XAMARIN_COOKIE:
